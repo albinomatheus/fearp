@@ -1,0 +1,267 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% Modelo de Trabalho Acadêmico da FEA-RP (tese de doutorado, dissertação de
+% mestrado e trabalhos monográficos em geral) em conformidade com 
+% ABNT NBR 14724:2011 e Diretrizes para Confecção de Teses e Dissertações da USP
+% ------------------------------------------------------------------------
+% ---------------------------------------------------------
+\documentclass[rec]{fearp}
+\autor          {Matheus Alves Albino}
+\titulo         {Modelo para Monografias, Dissertações e Teses em LaTeX}
+\data           {2017} 
+\local          {Ribeirão Preto}
+\preambulo      {Template em \LaTeX\ desenvolvido no \imprimirdepartamento \ da \imprimirfaculdade.}
+\orientador[Orientador/Orientadora]{Prof./Prof.ª}{X X}
+\engtitle{LaTeX Template for Theses, Dissertations and Monographs} % Título em inglês do trabalho
+
+% ----------------------------------------------------------------------------%
+%         INFORMAÇÕES DO PDF                                                  %
+% ----------------------------------------------------------------------------%
+\hypersetup{
+  pdftitle       = {\imprimirtitulo},
+  pdfsubject     = {\imprimirpreambulo},
+  pdfproducer    = {\LaTeX},
+  pdfcreator     = {pdflatex},
+  colorlinks     = true,
+  linkcolor      = black,            % Cor de links internos
+  citecolor      = black,            % Cor dos links para a bibliografia
+  filecolor      = black,            % Cor dos links
+  urlcolor       = blue,
+  bookmarksdepth = 4}
+% Palavras-chave para a ficha catalográfica
+\palavraschave{LaTeX}{ABNT}{AbnTeX2}{FEARP}
+% ----------------------------------------------------------------------------%
+%         BIBLIOGRAFIA/CITAÇÕES                                               %
+% ----------------------------------------------------------------------------
+% ABNT
+\usepackage[bibjustif, abnt-full-initials=yes, abnt-repeated-title-omit=yes, abnt-emphasize=it, alf]{abntex2cite} 
+%------------------------------------
+% Estilo APA
+%\usepackage[natbibapa]{apacite} 
+%\renewcommand{\BBAB}{e} % Troca "and" por "e" em apacite
+%-----------------------------------
+% Estilo Harvard
+% \usepackage{harvard} % para definições de bibliografia harvard (Usa com "and")
+% \citationstyle{dcu} 
+% \renewcommand{\harvardand}{\&} % troca "e" por "\&"
+%------------------------------------
+% Estilo de Vancouver
+%\bibliographystyle{vancouver}
+%\setcitestyle{numbers}
+% ----------------------------------------------------------------------------%
+%         ELEMENTOS PRÉ-TEXTUAIS                                              %
+% ----------------------------------------------------------------------------%
+\begin{document}
+\imprimircapa
+\input{versocapa} % Verso da capa
+\imprimirfolhaderosto
+
+\input{fichacatalografica}  % Ficha Catalográfica
+\input{folhaaprovacao} % Folha de Aprovação
+
+\begin{dedicatoria}
+\begin{flushright}
+\vspace*{\fill}
+\begin{minipage}{.52\textwidth}
+A dedicatória é um elemento pré-textual opcional.
+\end{minipage}
+\end{flushright}
+\end{dedicatoria}
+\begin{agradecimentos}
+Os agradecimentos são um elemento pré-textual opcional.
+\end{agradecimentos}
+
+\begin{epigrafe}
+\begin{flushright}
+\vspace*{\fill}
+\begin{minipage}{.52\textwidth}
+A epígrafe é um elemento pré-textual opcional.
+\end{minipage}
+\end{flushright}
+\end{epigrafe}
+
+% Resumo
+\begin{resumo}
+\tipotrabalho{Manual}
+\vspace{\onelineskip}
+
+O resumo em língua vernácula é um elemento pré-textual obrigatório, normalmente entre 100 e 300 palavras que deve indicar os tópicos essenciais do trabalho científico. É recomendável que esse texto inclua a contextualização do objeto de estudo, o objetivo geral do trabalho (isto é, sua questão de investigação), uma linha tratando do referencial teórico, a hipótese central a ser testada, a metodologia e as principais conclusões. É recomendado que o resumo seja acompanhado de 3 a 6 palavras-chave, que descrevam o trabalho. Para elaborar as palavras-chave, o autor pode utilizar as que constam do Vocabulário Controlado do SiBi/USP: \url{http://143.107.154.62/Vocab/Sibix652.dll/}. O Código JEL para textos em Economia pode ser consultado em: \url{https://pt.wikipedia.org/wiki/C\%C3\%B3digos\_de\_classifica\%C3\%A7\%C3\%A3o\_JEL}.
+
+\vspace{\onelineskip}
+
+\textbf{Palavras-chave}: 
+
+\jel{Y20} 
+\end{resumo}
+
+% Abstract
+\begin{resumo}[Abstract]
+\engtype{Manual} % Tipo de trabalho em inglês
+\vspace{\onelineskip}
+
+O resumo em inglês é um elemento pré-textual obrigatório. 
+
+\vspace*{\onelineskip}
+\noindent
+\textbf{Keywords}: \\
+\jel{} 
+\end{resumo}
+
+% Lista de ilustrações 
+% \newpage
+% \pdfbookmark[0]{\listfigurename}{lof}
+% \listoffigures*
+% \cleardoublepage
+
+% Lista de tabelas 
+% \pdfbookmark[0]{\listtablename}{lot}
+% \listoftables*
+% \cleardoublepage
+
+% Lista de quadros (opcional)
+% \pdfbookmark[0]{\listtablename}{loq}
+% \listofquadros*
+% \cleardoublepage
+
+% Lista de abreviaturas e siglas (opcional)
+% \begin{siglas}
+%   \item
+% \end{siglas}
+
+% Sumário 
+\phantom{x}
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+\mainmatter 
+\pagestyle{meuestilo}
+
+% ----------------------------------------------------------------------------%
+%         ELEMENTOS TEXTUAIS                                              %
+% ----------------------------------------------------------------------------%
+ 
+\chapter*{Introdução}
+\addcontentsline{toc}{chapter}{INTRODUÇÃO} % Para capítulos sem numeração que aparecem no sumário
+
+Uma breve introdução, geralmente sem subdivisão em partes e que deve conter um breve panorama ou contextualização do problema a ser discutido, uma revisão bibliográfica com os trabalhos mais significativos da área e a indicação da questão de investigação com duas ou mais variáveis que guiam a pesquisa. 
+
+Outros elementos recomendados para a introdução são a metodologia utilizada e as fontes, os objetivos gerais e específicos e a explicação sobre o desenvolvimento do trabalho, isto é, o conteúdo de cada capítulo.
+
+
+\chapter{Opções da classe}
+
+A classe traz customizações do abnTeX2 \url{http://abnTeX2.googlecode.com} para a Faculdade de Economia, Administração e Contabilidade de Ribeirão Preto (FEA-RP/USP). Fornece customização de capa, folha de rosto, formatação do texto e dos títulos e definição de macros auxiliares. 
+
+Para trabalhar com \LaTeX\ e com a classe abn\TeX\ , são sugeridos os seguintes \textit{links}:
+\begin{itemize}
+  \item Distribuição \LaTeX\ para windows: \url{https://www.tug.org/texlive/}
+  \item Editor de \LaTeX\ gratuito: \url{http://texstudio.sourceforge.net/}
+  \item JabRef -- Gerenciador de arquivos \texttt{.bib}: \url{http://jabref.sourceforge.net/}
+  \item Mendeley -- Gerenciador de artigos e bibliografia: \url{http://www.mendeley.com/}
+  \item Informações da classe Abn\TeX : \citeonline{abntex22013}
+  \item Editor de Textos Sublime Text: \url{http://www.sublimetext.com/}
+  \item SumatraPDF -- Leitor de PDF Gratuito amigável para trabalhar com \LaTeX\ no Sublime Text: \url{http://jabref.sourceforge.net/}
+  \item Para tópicos específicos sobre citações e referência no formato ABNT: \cite{abntex22013b} e \cite{abntex22013c}
+  \item Diretrizes para apresentação de dissertações e teses da USP: documento eletrônico e impresso (ABNT): \url{http://www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67}
+  \item Para o Modelo Canônico do AbnTeX2, ver \citeonline{abntex22013d}
+  \item Para converter arquivos em \LaTeX\ para \texttt{.rtf}: \url{http://www.sciweavers.org/l2rtf}
+\end{itemize}
+
+\section{Customizações de \texttt{abntex2}}
+
+A opção default imprime a versão final do texto, com as informações do autor, nome do orientador e elementos pretextuais. Todas as opções de classe são repassadas para Abn\TeX 2.
+\begin{verbatim}
+    \documentclass{fearp}
+\end{verbatim} 
+
+Há também opções predefinidas de capa e folha de rosto:
+\input{tabelas/options}
+
+\section{Opção \texttt{blind}}
+
+A opção \texttt{blind} imprime versões da capa e da folha de rosto sem as informações do nome do autor e orientador. Ao utilizar essa opção, também são omitidos os ambientes \texttt{agradecimentos} e \texttt{dedicatoria}. No caso do Departamento de Economia, deve-se retirar do Resumo e do texto o código JEL. 
+\begin{verbatim}
+    \documentclass[blind, rec]{fearp}
+\end{verbatim}
+
+\section{Soluções para citações e bibliografia}
+
+Além do estilo de citação ABNT, as Diretrizes USP permitem a utilização dos sistemas de referências e estilos de bibliografia da APA (\emph{American Psychological Association}), do Estilo de Vancouver e da norma ISO 690:2010 -- \emph{Information and documentation: guidelines for bibliographic references and citations to information resource}.
+
+\subsection{APA}
+Para selecionar o estilo APA, basta adicionar ao preâmbulo:
+\begin{verbatim}
+\usepackage[natbibapa]{apacite} 
+\renewcommand{\BBAB}{e} % Troca "and" por "e" em apacite
+\end{verbatim}
+E mudar o estilo de bibliografia para: 
+\begin{verbatim}
+\bibliographystyle{apacite} % APA
+\end{verbatim}
+
+As Diretrizes USP a serem seguidas estão disponíveis em: \url{http://dx.doi.org/10.11606/9788573140576}. Ver também a Documentação do pacote \texttt{apacite} \url{http://ctan.math.utah.edu/ctan/tex-archive/biblio/bibtex/contrib/apacite/apacite.pdf#page=10}
+
+Uma outra alternativa é utilizar o estilo Harvard aliado ao parâmetro \texttt{dcu}:
+
+\begin{verbatim}
+\usepackage{harvard} 
+\citationstyle{dcu} 
+\renewcommand{\harvardand}{\&} % troca "e" por "\&"
+\end{verbatim}
+
+\subsection{Vancouver}
+Para selecionar o estilo de Vancouver, basta adicionar ao preâmbulo: 
+\begin{verbatim}
+\bibliographystyle{vancouver}
+\setcitestyle{numbers}
+\end{verbatim}
+E mudar o estilo de bibliografia para:
+\begin{verbatim}
+\bibliographystyle{vancouver} % Vancouver
+\end{verbatim}
+
+Para as normas ISO, as Diretrizes USP estão disponíveis em: \url{http://dx.doi.org/10.11606/9788573140569}.
+Ver também a documentação de \texttt{Vancouver.bst}: \url{http://get-software.net/biblio/bibtex/contrib/vancouver/vancouver.pdf}.
+
+\subsection{ISO}
+
+Para as normas ISO, as Diretrizes USP a serem seguidas estão disponíveis em: \url{http://dx.doi.org/10.11606/9788573140590}.
+
+
+% ----------------------------------------------------------------------------%
+%         ELEMENTOS PÓS-TEXTUAIS                                              %
+% ----------------------------------------------------------------------------%
+% \bibliographystyle{apacite} % APA
+% \bibliographystyle{vancouver} % Vancouver
+% \bibliographystyle{dcu} % Harvard
+\bibliographystyle{abntex2-alf}
+\bibliography{referencias/referencias.bib}
+\begin{anexosenv}
+\chapter{Exemplo de Anexo}
+Um anexo.
+\begin{figure}[H]
+ \caption{Brasão da Universidade de São Paulo}
+    \centering
+    \includegraphics[width=.3\textwidth]{figuras/brasao_usp.eps}
+    \fonte{Universidade de São Paulo}
+    \label{fig:brasao}
+\end{figure}
+
+\ctable[caption = {Título da figura}, 
+label = tab:label, 
+figure, 
+pos = h
+]{c}{\tnote[]{Nota: Uma figura utilizando o pacote ctable.}}
+{\includegraphics[width=.3\textwidth]{figuras/brasao_usp.eps}}
+
+\end{anexosenv}
+\begin{apendicesenv}
+\chapter{Exemplo de Apêndice}
+Um exemplo de apêndice.
+\input{tabelas/quadro.tex}
+Um exemplo de tabelas usando o pacote \texttt{ctable}:
+\input{tabelas/ctable.tex}
+\end{apendicesenv}
+\end{document}
+
