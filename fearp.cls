@@ -12,7 +12,7 @@
 %%
 %% This work has the LPPL maintenance status `maintained'.
 %%
-%% The Current Maintainer of this work is Matheus Alves Albino, maalbino@fearp.usp.br
+%% The Current Maintainer of this work is Matheus Alves Albino, albino@usp.br
 %%
 %% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
 
